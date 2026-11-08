@@ -25,6 +25,7 @@ Evidence collection
   - first-screen text, links, and calls to action
   - mobile and desktop rendering evidence
   - performance, accessibility, and technical checks
+  - platform and third-party dependency fingerprint
                     |
                     v
 Deterministic rubric checks plus AI synthesis
@@ -55,6 +56,7 @@ Every report item must be assigned one category:
 ### Intake application
 
 - Collect URL, business type, business goal, and email.
+- Collect self-reported control answers for domain, hosting, website administration, analytics, forms, and key third-party services.
 - Explain that the report is an assessment, not a guarantee.
 - Rate limit requests and surface clear failure states.
 
@@ -63,13 +65,28 @@ Every report item must be assigned one category:
 - Validate the submitted URL before any fetch.
 - Collect a limited, reproducible set of page facts.
 - Run technical checks such as performance and basic SEO.
+- Detect public platform and dependency signals without attempting authentication.
 - Capture first-fold evidence at desktop and mobile widths.
+
+### Platform and dependency fingerprint
+
+The review should identify the likely technical platform and externally visible dependencies when public evidence supports it. This provides useful follow-up questions, not a conclusion about who controls the system.
+
+| Finding type | Examples of permitted evidence | Report treatment |
+| --- | --- | --- |
+| Platform signal | `wp-content` or `wp-includes` assets, a WordPress generator tag, a public `wp-json` response, or a form action using `admin-ajax.php` | State the likely platform and confidence level, with the exact public signal. |
+| Third-party dependency | Public form, booking, chat, analytics, payment, or scheduling endpoint on another domain | Name the observed service or endpoint and ask who owns the account. |
+| Admin-path signal | A public link or redirect involving `wp-admin` or `wp-login.php` | Report only that a WordPress administrative path is publicly referenced or reachable. Do not try to sign in or test credentials. |
+| Ownership status | Prospect intake answer or verified account access during a separately authorized audit | State as confirmed, self-reported, or unknown. |
+
+Do not infer that an agency, helper company, or any other party has administrator access merely because a site uses WordPress, a public WordPress administrative path exists, or a vendor is credited in the footer. Those clues should create an ownership follow-up question, such as: "Who has administrator access, and is that access documented in the business's name?"
 
 ### Report workflow
 
 - Apply the versioned clarity rubric.
 - Generate a draft report using only collected evidence.
 - Separate measured facts from inference.
+- Present platform and dependency findings with an evidence source and a confidence label.
 - Require a reviewer approval before delivery.
 
 ## Future production architecture

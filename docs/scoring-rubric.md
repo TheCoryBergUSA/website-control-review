@@ -98,6 +98,7 @@ Technical checks should support the business review but must not be mixed into t
 - Basic accessibility evidence
 - Basic on-page SEO evidence
 - Contact and lead-path checks
+- Public platform and third-party dependency signals, reported with confidence and evidence
 - Technology ownership questions that require human confirmation
 
 ## Recommendation standard
