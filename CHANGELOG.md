@@ -2,6 +2,15 @@
 
 This is a concise, reverse-chronological record of meaningful changes to Website Control Review. Entries are structured for human and AI review.
 
+## 2026-11-08 - Add repeatable local evidence runner
+
+- Type: feature | infrastructure
+- Scope: local review command, evidence-packet generator, tests, and operating guide
+- Summary: Added a dependency-free URL runner that safely gathers public page, contact-path, SEO, WordPress, and third-party dependency evidence, then produces a reviewer worksheet instead of an unverified automated verdict.
+- Visual review: not performed, command-line and Markdown output only
+- SEO review: no change needed, no public page exists
+- Build: not run, no build command exists; automated tests passed
+
 ## 2026-11-08 - Add platform and dependency evidence model
 
 - Type: rubric | infrastructure

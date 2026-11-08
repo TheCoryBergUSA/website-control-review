@@ -21,6 +21,17 @@ The first release is a hybrid workflow. The system gathers evidence and drafts a
 - [Assessment architecture](docs/architecture.md)
 - [Scoring rubric](docs/scoring-rubric.md)
 - [Report method](docs/report-method.md)
+- [Local review runner](docs/review-runner.md)
+
+## Run the first internal review tool
+
+From this repository, run:
+
+```sh
+npm run review
+```
+
+Enter a URL when prompted. The runner writes a private evidence packet under `reports/` that you can use to complete the rubric with AI assistance and your own judgment. See the [local review runner guide](docs/review-runner.md) for the exact checks and boundaries.
 
 ## Planned repository layout
 
